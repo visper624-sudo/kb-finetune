@@ -1,0 +1,23 @@
+{
+  "n": 647,
+  "n_answerable": 457,
+  "n_unanswerable": 190,
+  "faithfulness": 0.9321,
+  "hallucination_rate": 0.0,
+  "citation_accuracy": 0.9526,
+  "citation_coverage": 0.9195,
+  "citation_gold": 0.7882,
+  "citation_score": 0.9361,
+  "key_point_coverage": 0.6077,
+  "format_compliance": 0.6909,
+  "term_accuracy": 0.8824,
+  "refusal_accuracy": 0.7158,
+  "false_refusal_rate": 0.0635,
+  "answer_recall": 0.9365,
+  "refusal_score": 0.782,
+  "composite": 0.8139,
+  "refusal_accuracy_ci": [
+    0.6479,
+    0.7752
+  ]
+}

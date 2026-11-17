@@ -1,0 +1,132 @@
+[
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00001",
+    "fmt": "policy",
+    "question": "新员工入职需要准备哪些材料？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00002",
+    "fmt": "policy",
+    "question": "新员工入职需要准备哪些材料？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00003",
+    "fmt": "policy",
+    "question": "关于入职材料清单，公司是怎么规定的？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00004",
+    "fmt": "policy",
+    "question": "关于入职材料清单，公司是怎么规定的？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00005",
+    "fmt": "policy",
+    "question": "入职材料清单这块有什么要求？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00006",
+    "fmt": "policy",
+    "question": "入职材料清单这块有什么要求？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00007",
+    "fmt": "policy",
+    "question": "请分点说明入职材料清单？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00008",
+    "fmt": "policy",
+    "question": "请分点说明入职材料清单？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00009",
+    "fmt": "policy",
+    "question": "公司对入职材料清单是怎么要求的？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00010",
+    "fmt": "policy",
+    "question": "公司对入职材料清单是怎么要求的？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00011",
+    "fmt": "policy",
+    "question": "入职材料清单的标准口径是什么？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "valid-topic-00012",
+    "fmt": "policy",
+    "question": "入职材料清单的标准口径是什么？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  },
+  {
+    "type": "invalid_sample",
+    "id": "train-auto-00003",
+    "fmt": "policy",
+    "question": "季度内渠道预算调剂是怎么规定的？",
+    "problems": [
+      "缺少【依据】/【要点】",
+      "缺少分点依据"
+    ]
+  }
+]

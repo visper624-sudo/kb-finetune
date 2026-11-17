@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知识库模型微调 · 4.1 演示控制台</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">KB<span>·</span>FT</div>
+    <div>
+      <h1>知识库项目模型微调</h1>
+      <p>4.1 数据合成 · 训练 · 评测 · 接入 2.9 知识库平台</p>
+    </div>
+  </div>
+  <div class="status">
+    <span class="dot"></span><span id="statusText">DPH 模型加载中…</span>
+    <span class="pill" id="modelPill">kb-finetuned-dph</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="chat">问答对比</button>
+  <button class="tab" data-tab="dataset">数据集</button>
+  <button class="tab" data-tab="metrics">评测结果</button>
+  <button class="tab" data-tab="integration">接口与集成</button>
+</nav>
+
+<main>
+  <!-- ============================ 问答对比 ============================ -->
+  <section id="tab-chat" class="panel active">
+    <div class="hero">
+      <div>
+        <h2>同一问题，两种回答</h2>
+        <p>左侧是「检索后直接拼句子」的基座式回答；右侧是经过 SFT 数据训练的微调策略模型，
+          强制引用、格式与拒答边界。检索片段完全相同。</p>
+      </div>
+      <div class="hero-badges">
+        <span class="badge teal">引用可追溯</span>
+        <span class="badge blue">4 类格式</span>
+        <span class="badge amber">该拒就拒</span>
+      </div>
+    </div>
+
+    <div class="ask-box">
+      <textarea id="question" rows="2" placeholder="例如：出差住宿费标准是多少？（试试：公司报销分为哪几类？/ 生鲜坏了怎么申请退款？/ 差旅报销 15 个工作日还是 30 个自然日？）"></textarea>
+      <button id="askBtn" class="primary">对比回答</button>
+    </div>
+    <div class="chips" id="examples">
+      <span class="chip">出差住宿费标准是多少？</span>
+      <span class="chip">公司报销分为哪几类？</span>
+      <span class="chip">生鲜坏了怎么申请退款？</span>
+      <span class="chip">差旅报销到底要在 15 个工作日内还是 30 个自然日内提交？</span>
+      <span class="chip">竞品最近的定价策略是什么？</span>
+    </div>
+
+    <div id="answerGrid" class="answer-grid hidden">
+      <article class="card baseline">
+        <div class="card-head"><h3>基座模型（检索直答）</h3><span class="tag gray">baseline</span></div>
+        <div class="meta-line" id="baselineMeta"></div>
+        <div class="answer" id="baselineAnswer"></div>
+      </article>
+      <article class="card finetuned">
+        <div class="card-head"><h3>微调模型 DPH</h3><span class="tag teal">finetuned</span></div>
+        <div class="meta-line" id="ftMeta"></div>
+        <div class="answer" id="ftAnswer"></div>
+        <div class="evidence-line" id="ftEvidence"></div>
+      </article>
+    </div>
+
+    <div id="contextsWrap" class="contexts hidden">
+      <div class="section-title"><h3>检索片段</h3><span class="hint">点击回答中的 [n] 可定位到对应片段</span></div>
+      <div id="contexts" class="context-grid"></div>
+      <div class="feature-strip" id="features"></div>
+    </div>
+  </section>
+
+  <!-- ============================ 数据集 ============================ -->
+  <section id="tab-dataset" class="panel">
+    <div class="hero">
+      <div>
+        <h2>由 2.9 知识库文档反向合成</h2>
+        <p>30 篇制度文档 → 57 个切片 → 140 个人工主题 + 60 无召回 + 45 弱相关 + 14 冲突 + 20 部分可答，
+          按文档切分训练/验证/测试，同一文档不跨 split。</p>
+      </div>
+    </div>
+    <div class="stat-grid" id="datasetStats"></div>
+    <div class="toolbar">
+      <span class="muted">能力筛选：</span>
+      <button class="filter active" data-cap="">全部</button>
+      <button class="filter" data-cap="policy">制度解释</button>
+      <button class="filter" data-cap="product">产品说明</button>
+      <button class="filter" data-cap="steps">操作步骤</button>
+      <button class="filter" data-cap="troubleshoot">故障处理</button>
+      <button class="filter" data-cap="integration">多片段整合</button>
+      <button class="filter" data-cap="refusal_none">无召回拒答</button>
+      <button class="filter" data-cap="refusal_weak">弱相关拒答</button>
+      <button class="filter" data-cap="refusal_conflict">冲突拒答</button>
+      <button class="filter" data-cap="partial">部分可答</button>
+    </div>
+    <div id="sampleList" class="sample-list"></div>
+  </section>
+
+  <!-- ============================ 评测结果 ============================ -->
+  <section id="tab-metrics" class="panel">
+    <div class="hero">
+      <div>
+        <h2>三组对比 + 两个消融</h2>
+        <p>测试集固定 647 条，同一 Prompt、同一检索。忠实性 / 引用 / 拒答 / 覆盖 / 格式五维加权。</p>
+      </div>
+    </div>
+    <div id="metricCards" class="stat-grid"></div>
+    <div class="card">
+      <div class="card-head"><h3>指标对比</h3><span class="tag blue">test split</span></div>
+      <div class="table-wrap" id="metricTable"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-head"><h3>综合分</h3><span class="tag teal">composite</span></div>
+        <div id="barChart" class="bar-chart"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>分能力表现</h3><span class="tag amber">DPH</span></div>
+        <div class="table-wrap" id="capTable"></div>
+      </div>
+    </div>
+    <div class="card note-card">
+      <h3>指标口径提醒</h3>
+      <p>本机离线环境没有生成式模型权重，实测列为「蒸馏策略模型（DPH）」；LoRA 路径用
+        <code>train/train_lora.py</code> 训练后，执行 <code>python eval/run_eval.py --configs lora</code>
+        即可用同一测试集补齐 LoRA 列。抽取式实现的忠实性/幻觉率接近上限，区分力主要看引用、格式与拒答。</p>
+    </div>
+  </section>
+
+  <!-- ============================ 接口与集成 ============================ -->
+  <section id="tab-integration" class="panel">
+    <div class="hero">
+      <div>
+        <h2>零改造接入 2.9 知识库平台</h2>
+        <p>本服务同时暴露 OpenAI 兼容接口。2.9 只需把模型提供方改成 openai、base_url 指向本服务，
+          检索、四维权限鉴权、SSE 流式与引用卡片全部保持原样。</p>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-head"><h3>2.9 系统配置</h3><span class="tag blue">config</span></div>
+        <pre class="code">provider      = openai
+base_url      = http://127.0.0.1:8802/v1
+api_key       = any-string
+model         = kb-finetuned-dph
+temperature   = 0.2
+
+# 然后重启 2.9：python run.py
+# 问答工作台 → 设置 → 模型与系统参数 → 填入以上值</pre>
+        <p class="muted">2.9 的鉴权仍在 Prompt 拼接前完成；微调模型只替换生成端，不能替代权限过滤。</p>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>接口自测</h3><span class="tag teal">curl</span></div>
+        <pre class="code">curl http://127.0.0.1:8802/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "kb-finetuned-dph",
+    "messages": [{"role":"user","content":"【参考资料】[1] 《差旅报销标准》 P1 第1段 一线城市住宿标准为每人每晚 500 元。【问题】出差住宿标准是多少？"}]
+  }'</pre>
+        <p class="muted">也支持 <code>stream=true</code> 的 SSE 输出；本控制台的「问答对比」调用的是
+          <code>/api/ask</code>。</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>链路位置</h3><span class="tag amber">architecture</span></div>
+      <pre class="code">2.9 检索 → 四维鉴权裁剪 → Prompt（带 [n] 编号） → 微调模型（本服务） → SSE → 引用卡片
+                                                   ↑
+                                    训练：同一份 system prompt + 同一 test.jsonl</pre>
+      <p>微调不解决权限问题：召回命中但无权访问的片段，在进入 Prompt 前已经被 2.9 的
+        <code>permissions.split_candidates</code> 裁掉。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>知识库项目模型微调 · 4.1</span>
+  <span>数据源：2.9 知识库管理平台 · 30 篇制度文档</span>
+  <span>零第三方依赖 · 离线可跑</span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

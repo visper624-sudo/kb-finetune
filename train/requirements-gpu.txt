@@ -1,0 +1,9 @@
+# GPU 路径依赖（LoRA / QLoRA）
+# 重要：transformers 5.x 要求 torch>=2.6；本课程镜像常见 torch 2.5.1，
+# 因此这里锁定 4.x 稳定组合。若你主动升级 torch>=2.6，可自行放宽 <5。
+torch>=2.1
+transformers>=4.45,<5
+peft>=0.13,<0.15
+accelerate>=0.34,<2
+# QLoRA 可选；Linux 下建议 bitsandbytes==0.45.0（由 cloud/setup.sh 单独安装）
+# bitsandbytes>=0.43,<0.50

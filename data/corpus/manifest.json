@@ -1,0 +1,326 @@
+[
+  {
+    "slug": "travel-reimburse",
+    "file": "travel-reimburse.pdf",
+    "title": "差旅报销标准",
+    "category": "财务制度",
+    "format": "pdf",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "expense-approval",
+    "file": "expense-approval.md",
+    "title": "费用报销审批流程",
+    "category": "财务制度",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "exec-compensation",
+    "file": "exec-compensation.pdf",
+    "title": "高管薪酬与股权激励细则",
+    "category": "人力资源",
+    "format": "pdf",
+    "perms": {
+      "departments": [
+        "人力资源部"
+      ],
+      "roles": [
+        "management"
+      ]
+    }
+  },
+  {
+    "slug": "sales-commission",
+    "file": "sales-commission.docx",
+    "title": "销售提成管理办法",
+    "category": "市场运营",
+    "format": "docx",
+    "perms": {
+      "departments": [
+        "市场部",
+        "销售部"
+      ],
+      "roles": [
+        "management"
+      ]
+    }
+  },
+  {
+    "slug": "budget-management",
+    "file": "budget-management.md",
+    "title": "年度预算编制与执行管理办法",
+    "category": "财务制度",
+    "format": "md",
+    "perms": {
+      "departments": [
+        "财务部"
+      ],
+      "roles": [
+        "management"
+      ]
+    }
+  },
+  {
+    "slug": "invoice-rules",
+    "file": "invoice-rules.txt",
+    "title": "发票开具与查验规范",
+    "category": "财务制度",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "fixed-asset",
+    "file": "fixed-asset.txt",
+    "title": "固定资产与办公设备管理规范",
+    "category": "财务制度",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "employee-handbook",
+    "file": "employee-handbook.md",
+    "title": "员工手册（考勤与假期）",
+    "category": "人力资源",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "onboarding",
+    "file": "onboarding.docx",
+    "title": "新员工入职指引",
+    "category": "人力资源",
+    "format": "docx",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "recruit-process",
+    "file": "recruit-process.md",
+    "title": "招聘与面试管理流程",
+    "category": "人力资源",
+    "format": "md",
+    "perms": {
+      "departments": [
+        "人力资源部"
+      ]
+    }
+  },
+  {
+    "slug": "performance-review",
+    "file": "performance-review.txt",
+    "title": "绩效考核管理办法",
+    "category": "人力资源",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "training-policy",
+    "file": "training-policy.txt",
+    "title": "员工培训与认证支持政策",
+    "category": "人力资源",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "salary-payment",
+    "file": "salary-payment.md",
+    "title": "薪酬发放与个税申报说明",
+    "category": "人力资源",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "account-security",
+    "file": "account-security.md",
+    "title": "账号与权限管理规范",
+    "category": "信息技术",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "data-security",
+    "file": "data-security.pdf",
+    "title": "数据安全与保密管理制度",
+    "category": "信息技术",
+    "format": "pdf",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "it-support",
+    "file": "it-support.txt",
+    "title": "IT 故障报修与支持流程",
+    "category": "信息技术",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "vpn-remote",
+    "file": "vpn-remote.md",
+    "title": "远程办公与 VPN 使用规范",
+    "category": "信息技术",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "return-policy",
+    "file": "return-policy.pdf",
+    "title": "退换货与售后政策",
+    "category": "客服政策",
+    "format": "pdf",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "complaint-level",
+    "file": "complaint-level.md",
+    "title": "客户投诉分级与响应标准",
+    "category": "客服政策",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "service-scripts",
+    "file": "service-scripts.txt",
+    "title": "客服沟通话术与服务规范",
+    "category": "客服政策",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "logistics-policy",
+    "file": "logistics-policy.docx",
+    "title": "物流时效与异常处理规则",
+    "category": "客服政策",
+    "format": "docx",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "brand-vi",
+    "file": "brand-vi.md",
+    "title": "品牌视觉识别（VI）使用规范",
+    "category": "市场运营",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "ad-delivery",
+    "file": "ad-delivery.txt",
+    "title": "市场投放与效果评估规范",
+    "category": "市场运营",
+    "format": "txt",
+    "perms": {
+      "departments": [
+        "市场部"
+      ]
+    }
+  },
+  {
+    "slug": "pr-crisis",
+    "file": "pr-crisis.md",
+    "title": "舆情应对与公关响应预案",
+    "category": "市场运营",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "campaign-sop",
+    "file": "campaign-sop.docx",
+    "title": "大促活动执行 SOP",
+    "category": "市场运营",
+    "format": "docx",
+    "perms": {
+      "departments": [
+        "市场部",
+        "销售部"
+      ],
+      "global": true
+    }
+  },
+  {
+    "slug": "procurement",
+    "file": "procurement.txt",
+    "title": "采购与供应商管理规范",
+    "category": "财务制度",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "meeting-room",
+    "file": "meeting-room.txt",
+    "title": "会议室与办公资源使用规定",
+    "category": "行政",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "oncall-process",
+    "file": "oncall-process.md",
+    "title": "线上故障应急响应与值班制度",
+    "category": "信息技术",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "quality-standard",
+    "file": "quality-standard.md",
+    "title": "商品质量标准与抽检规则",
+    "category": "客服政策",
+    "format": "md",
+    "perms": {
+      "global": true
+    }
+  },
+  {
+    "slug": "knowledge-base-rule",
+    "file": "knowledge-base-rule.txt",
+    "title": "知识库内容维护规范",
+    "category": "信息技术",
+    "format": "txt",
+    "perms": {
+      "global": true
+    }
+  }
+]

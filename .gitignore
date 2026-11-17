@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 运行期与本地配置
+*.log
+.env
+cloud/cloud.env
+data/cache/
+data/uploads/
+
+# 大体积训练产物（不纳入演示仓库）
+adapter/lora/
+data/out/train.jsonl
+data/out/valid.jsonl
+eval/results/**/*.jsonl
+report/report-preview.png
+
+# 系统文件
+.DS_Store
+Thumbs.db

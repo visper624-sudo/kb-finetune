@@ -1,0 +1,66 @@
+{
+  "total": 3547,
+  "by_split": {
+    "test": 647,
+    "train": 2442,
+    "valid": 458
+  },
+  "by_format": {
+    "product": 458,
+    "policy": 1995,
+    "steps": 246,
+    "troubleshoot": 148,
+    "integration": 100,
+    "refusal": 518,
+    "refusal_conflict": 42,
+    "partial": 40
+  },
+  "by_source": {
+    "topic": 2845,
+    "combo": 100,
+    "no_recall": 360,
+    "weak_recall": 158,
+    "conflict": 42,
+    "partial": 40,
+    "auto_fact": 2
+  },
+  "by_capability": {
+    "product": 458,
+    "policy": 1995,
+    "steps": 246,
+    "troubleshoot": 148,
+    "integration": 100,
+    "refusal_none": 360,
+    "refusal_weak": 158,
+    "refusal_conflict": 42,
+    "partial": 40
+  },
+  "by_domain": {
+    "财务制度": 623,
+    "人力资源": 788,
+    "市场运营": 578,
+    "信息技术": 701,
+    "客服政策": 447,
+    "行政": 114
+  },
+  "refusal": 600,
+  "refusal_ratio": 0.1692,
+  "with_citation": 3029,
+  "avg_contexts": 3.49,
+  "avg_answer_chars": 97.8,
+  "failures": 13,
+  "dropped_duplicates": 349,
+  "docs_by_split": {
+    "train": 18,
+    "valid": 6,
+    "test": 6
+  },
+  "spec": {
+    "topics": 140,
+    "combos": 26,
+    "no_recall": 60,
+    "weak_recall": 45,
+    "conflicts": 14,
+    "partial": 20
+  }
+}
